@@ -1,0 +1,17 @@
+package List_eaterators;
+
+public class ListIterator {
+	private Link current;
+	private Link prev;
+	private LinkedList ourList;
+	public ListIterator(LinkedList linkedList) {
+		// TODO Auto-generated constructor stub
+		ourList = linkedList;
+		reset();
+	}
+	public voi reset() {
+		current = ourList.getFirst();
+		previous =null;
+	}
+
+}

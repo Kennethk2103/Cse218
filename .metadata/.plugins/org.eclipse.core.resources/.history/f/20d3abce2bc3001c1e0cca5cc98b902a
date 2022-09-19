@@ -1,0 +1,86 @@
+package DataHandling;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.ObjectInputStream;
+import java.io.ObjectOutputStream;
+import java.util.Scanner;
+import java.util.TreeMap;
+
+public class Utilities {
+	
+	public static void backUpApplicantData(TreeMap<Integer, Applicant> tree) {
+		
+		FileOutputStream fos;
+		ObjectOutputStream oos;
+
+		try {
+			fos = new FileOutputStream("BackupData/applicantDataBase.dat");	
+			oos = new ObjectOutputStream(fos);
+			
+			oos.writeObject(tree);
+			oos.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		 catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+	}
+	
+	public static TreeMap<Integer, Applicant> restoreApplicantData() {
+		TreeMap<Integer, Applicant> tree = new TreeMap<Integer, Applicant>();
+		File file = new File("BackupData/applicantDataBase.dat");
+		if(!file.exists()) {
+			return tree;
+		}
+		else {
+			FileInputStream fis;
+			try {
+				fis = new FileInputStream("BackupData/applicantDataBase.dat");
+				ObjectInputStream ois=new ObjectInputStream(fis);
+				tree = (TreeMap<Integer, Applicant>) ois.readObject();
+				
+
+			} catch (FileNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			catch (IOException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+			catch (ClassNotFoundException e) {
+				// TODO Auto-generated catch block
+				e.printStackTrace();
+			}
+		}
+		return tree;
+	}
+	public static String [] statesList() {
+		String [] list = String[50];
+		File file = new File("states.txt");
+
+		Scanner scan;
+		try {
+			scan = new Scanner(file);
+			int i =0;
+			while(scan.hasNextLine()) {
+				String line = scan.nextLine();
+			}
+			list[]
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		return list;
+			
+		
+	}
+
+}

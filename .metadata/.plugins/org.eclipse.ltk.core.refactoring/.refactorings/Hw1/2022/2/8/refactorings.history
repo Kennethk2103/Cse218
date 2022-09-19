@@ -1,0 +1,4 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<session version="1.0">
+<refactoring comment="Copy element &apos;Student.java&apos; to &apos;L04_Stacks_Ques_PritorityQues/src/p4&apos;&#x0D;&#x0A;- Original project: &apos;Hw1&apos;&#x0D;&#x0A;- Destination element: &apos;L04_Stacks_Ques_PritorityQues/src/p4&apos;&#x0D;&#x0A;- Original element: &apos;p2.Student.java&apos;" description="Copy compilation unit" destination="=L04_Stacks_Ques_PritorityQues/src&lt;p4" element1="/src&lt;p2{Student.java" files="0" flags="589830" folders="0" id="org.eclipse.jdt.ui.copy" policy="org.eclipse.jdt.ui.copyResources" stamp="1645120815642" units="1" version="1.0"/>
+</session>

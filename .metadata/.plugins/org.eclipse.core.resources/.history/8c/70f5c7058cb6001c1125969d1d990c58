@@ -1,0 +1,33 @@
+package p1;
+
+import P1.Link;
+
+public class Node {
+	public int iData;
+	public double dData;
+	public Node left_Node;
+	public Node right_Node;
+	
+	
+	public void displayNode() {
+		System.out.println(iData + " " + dData);
+	}
+	public Node find_Link(int key) {
+		Node current_Link=root;
+		while(current_Link.getVal()!=a.getVal() &&(current_Link.left_link==null &&current_Link.right_link==null)) {
+			if(a.getVal()==current_Link.getVal()) {
+				return current_Link;
+			}
+			if(current_Link.getVal()<a.getVal()) {
+				current_Link=current_Link.getLeft_link();
+			}
+			if(current_Link.getVal()>a.getVal()) {
+				current_Link=current_Link.getRight_link();
+			}
+			
+			
+		}
+		System.out.println("Link dosent exist");
+		return null;
+	}
+}

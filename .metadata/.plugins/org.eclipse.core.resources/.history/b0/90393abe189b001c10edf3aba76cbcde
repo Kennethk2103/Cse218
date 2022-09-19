@@ -1,0 +1,13 @@
+package List_eaterators;
+
+public class ListIterator {
+	private Link current;
+	private Link prev;
+	private LinkList ourList;
+	public ListIterator(LinkedList linkedList) {
+		// TODO Auto-generated constructor stub
+		ourList = linkedList;
+		reset();
+	}
+
+}

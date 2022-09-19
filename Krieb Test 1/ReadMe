@@ -1,0 +1,9 @@
+Question 1 - 
+1. Big O time is based the highest value in the equation for the search, such as for sequential search the big o is just X or bubble x^2
+2. The big O complexity is for sequential search is just X
+3.The big O complexity for binary search is logx
+4.the big O complexity for bubble search, selection search, and insertion search is X^2
+5. The big o time for binary search is the shortest, sequential being second shortest, and 
+
+Question 2 - 
+There seemed to be no real connection between length of array and the average time taken to search for a value;

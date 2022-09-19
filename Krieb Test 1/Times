@@ -1,0 +1,22 @@
+Sequential Search
+430 | number of elms 50
+550 | number of elms 150
+270 | number of elms 250
+300 | number of elms 350
+270 | number of elms 450
+300 | number of elms 550
+300 | number of elms 650
+3650 | number of elms 750
+3840 | number of elms 850
+200 | number of elms 950
+Binary Search
+450 | numebr of elms 50
+460 | numebr of elms 150
+290 | numebr of elms 250
+290 | numebr of elms 350
+300 | numebr of elms 450
+300 | numebr of elms 550
+290 | numebr of elms 650
+340 | numebr of elms 750
+350 | numebr of elms 850
+210 | numebr of elms 950

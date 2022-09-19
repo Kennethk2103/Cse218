@@ -1,0 +1,9 @@
+package List_eaterators;
+
+public class ListIterator {
+
+	public ListIterator(LinkedList linkedList) {
+		// TODO Auto-generated constructor stub
+	}
+
+}

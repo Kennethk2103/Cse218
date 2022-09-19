@@ -1,0 +1,58 @@
+package p1;
+
+public class Node {
+	private int val;
+	private double dData;
+	private Node left_Node;
+	private Node right_Node;
+	public Node(int val, double dData) {
+		this.val=val;
+		this.dData=dData;
+		left_Node = null;
+		right_Node =null;
+	}
+	public Node getLeft_Node() {
+		return left_Node;
+	}
+	public void setLeft_Node(Node left_Node) {
+		this.left_Node = left_Node;
+	}
+	public Node getRight_Node() {
+		return right_Node;
+	}
+	public void setRight_Node(Node right_Node) {
+		this.right_Node = right_Node;
+	}
+	public int getVal() {
+		return val;
+	}
+	
+	public double getdData() {
+		return dData;
+	}
+	public void setdData(double dData) {
+		this.dData = dData;
+	}
+	public void evaluate(Node a) {
+		if(a.getVal()<val) {
+			if(left_Node==null) {
+				left_Node = new Node(a.getVal());
+				
+			}
+			else {
+				left_Node.evaluate(a);
+			}
+		}
+		else {
+			if(right_Node==null) {
+				right_Node = new Node(a.getVal());
+				
+			}
+			else {
+				right_Node.evaluate(a);
+			}
+			
+		}
+	}
+
+}

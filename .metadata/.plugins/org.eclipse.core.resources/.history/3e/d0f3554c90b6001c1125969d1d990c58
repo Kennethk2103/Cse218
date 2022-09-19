@@ -1,0 +1,110 @@
+package p1;
+
+
+public class Tree {
+	private Node root;
+
+	public Tree() {
+		super();
+		root=null;
+	}
+	public void insert(int iData,double dData) {
+		Node temp = new Node();
+		temp.dData=dData;
+		temp.iData=iData;
+		if(root == null) {
+			root=temp;
+		}
+		else {
+			Node current = root;
+			Node parent;
+			while(true) {
+				parent=current;
+				if(iData>current.iData) {
+					current=current.right_Node;
+					if(current==null) {
+						parent.right_Node=current;
+						return;
+					}
+				}
+				else {
+					current=current.left_Node;
+					if(current==null) {
+						parent.left_Node=current;
+						return;
+					}
+				}
+				
+				
+			}
+		}
+		
+	}
+	public boolean Delete(int iData) {
+		Node temp = find_Node(iData);
+		if(temp==null) {
+			return;
+		}
+		else {
+			Node current;
+			Node last =null;
+			current=root;
+			while(current.left_Node!=null) {
+				last = current;
+				current=current.left_Node;
+				
+				
+			}
+			last.left_Node=current.right_Node;
+			current.right_Node=temp.right_Node;
+			current.left_Node=temp.left_Node;
+		}
+		///finding node logn
+		///finding succesor logn
+	}
+		public Node minimum() {
+			Node current;
+			Node last =null;
+			current=root;
+			while(current!=null) {
+				last = current;
+				current=current.left_Node;
+				
+			}
+			return last;
+		}
+		public Node max() {
+			Node current;
+			Node last =null;
+			current=root;
+			while(current!=null) {
+				last = current;
+				current=current.right_Node;
+				
+			}
+			return last;
+		}
+	
+	
+	
+	public Node find_Node(int key) {
+		Node current=root;
+		
+		while(current.iData!=key) {
+			if(key<current.iData) {
+				current=current.left_Node;
+			}
+			else {
+				current=current.right_Node;
+			}
+			if(current==null) {
+				return null;
+				///return null
+			}
+		}
+		return current;
+	
+	}
+	
+
+}

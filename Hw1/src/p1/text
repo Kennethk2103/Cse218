@@ -1,0 +1,44 @@
+Sequential
+length of array: 50 time taken 132100
+length of array: 100 time taken 38800
+length of array: 150 time taken 27300
+length of array: 200 time taken 31000
+length of array: 250 time taken 21200
+length of array: 300 time taken 15900
+length of array: 350 time taken 27200
+length of array: 400 time taken 17800
+length of array: 450 time taken 63200
+length of array: 500 time taken 17900
+length of array: 550 time taken 140800
+length of array: 600 time taken 31300
+length of array: 650 time taken 20200
+length of array: 700 time taken 32000
+length of array: 750 time taken 27800
+length of array: 800 time taken 33900
+length of array: 850 time taken 51700
+length of array: 900 time taken 18400
+length of array: 950 time taken 57000
+length of array: 1000 time taken 61800
+Binary
+length of array: 50 time taken 27200
+length of array: 100 time taken 17900
+length of array: 150 time taken 30300
+length of array: 200 time taken 16000
+length of array: 250 time taken 16700
+length of array: 300 time taken 20600
+length of array: 350 time taken 16000
+length of array: 400 time taken 20400
+length of array: 450 time taken 20300
+length of array: 500 time taken 21300
+length of array: 550 time taken 21500
+length of array: 600 time taken 28300
+length of array: 650 time taken 32200
+length of array: 700 time taken 26300
+length of array: 750 time taken 25900
+length of array: 800 time taken 26500
+length of array: 850 time taken 24700
+length of array: 900 time taken 33300
+length of array: 950 time taken 30800
+length of array: 1000 time taken 34500
+
+length of time generally went up faster for sequential rather than binary

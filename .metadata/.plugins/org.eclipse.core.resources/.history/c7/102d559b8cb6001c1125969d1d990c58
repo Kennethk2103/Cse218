@@ -1,0 +1,91 @@
+package p1;
+
+
+public class Tree {
+	private Node root;
+
+	public Tree() {
+		super();
+		root=null;
+	}
+	public void insert(int iData,double dData) {
+		Node temp = new Node();
+		temp.dData=dData;
+		temp.iData=iData;
+		if(root == null) {
+			root=temp;
+		}
+		else {
+			Node current = root;
+			Node parent;
+			while(true) {
+				parent=current;
+				if(iData>current.iData) {
+					current=current.right_Node;
+					if(current==null) {
+						parent.right_Node=current;
+						return;
+					}
+				}
+				else {
+					current=current.left_Node;
+					if(current==null) {
+						parent.left_Node=current;
+						return;
+					}
+				}
+				
+				
+			}
+		}
+		
+	}
+	public void Delete(int iData) {
+		
+			Node current = root;
+			Node parent;
+			while(true) {
+				parent=current;
+				if(iData>current.iData) {
+					current=current.right_Node;
+					if(current==null) {
+						parent.right_Node=null;
+						return;
+					}
+				}
+				else {
+					current=current.left_Node;
+					if(current==null) {
+						parent.left_Node=null;
+						return;
+					}
+				}
+				
+				
+			}
+		}
+		
+	
+	
+	
+	public Node find_Node(int key) {
+		Node current=root;
+		
+		while(current.iData!=key) {
+			if(key<current.iData) {
+				current=current.left_Node;
+			}
+			else {
+				current=current.right_Node;
+			}
+			if(current==null) {
+				return null;
+				///return null
+			}
+		}
+		return current;
+	
+	}
+	
+
+}

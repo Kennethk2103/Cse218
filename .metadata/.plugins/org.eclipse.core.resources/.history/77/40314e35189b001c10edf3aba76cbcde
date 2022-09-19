@@ -1,0 +1,12 @@
+package List_eaterators;
+
+public class LinkedList {
+	private Link first;
+	public LinkedList() {
+		first=null;
+	}
+	public ListIterator getIterator() {
+		return new ListIterator(this);
+	}
+
+}

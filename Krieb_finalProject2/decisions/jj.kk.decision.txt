@@ -1,0 +1,9 @@
+|Current Status |WaitListed               |
+AI Calculation
+|Catagory       |Details                  |Effect on AI|
+|Gpa            |Gpa*20                   |+80       |
+|Sat            |Sat/100                  |+16       |
+|Income         |Income/10000             |+100      |
+|Fletch score   |Fletch score/5           |-38.73    |
+|Typos          |Every typos per 100 words|-1        |
+|               |AI score                 |156.27    |

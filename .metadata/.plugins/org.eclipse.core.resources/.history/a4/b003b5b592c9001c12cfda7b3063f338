@@ -1,0 +1,122 @@
+package DataHandling;
+
+import java.io.File;
+import java.io.FileNotFoundException;
+import java.util.Hashtable;
+import java.util.Scanner;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
+public class EssayHandleing {
+	private static Hashtable table;
+	
+	public EssayHandleing() {
+	
+	}
+//	public static int countWords(String str) {
+//	int num = 0;
+//
+//	String pattern = "[A-Za-z]+";
+//	Pattern tokenSplitter = Pattern.compile(pattern);
+//	Matcher m = tokenSplitter.matcher(str);
+//
+//	while (m.find()) {
+//		num++;
+//	}
+//	return num;
+//
+//}
+	
+	public static String readEssay(File file) {
+		String essay="";
+		Scanner scan;
+		try {
+			scan = new Scanner(file);
+			while(scan.hasNextLine()) {
+				String line = scan.nextLine();
+				essay += line;
+			}
+			scan.close();
+		} catch (FileNotFoundException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		System.out.println(essay);
+		return essay;
+			
+	}
+	
+	public static String [] getWords(String para) {
+		int num =0;
+		String pattern = "[!@.,/? ]+";
+		Pattern tokenSplitter = Pattern.compile(pattern);
+		String[] words = tokenSplitter.split(para);
+		return words;
+	}
+
+	public Hashtable getTable() {
+		return table;
+	}
+
+
+	public void setTable(Hashtable table) {
+		EssayHandleing.table = table;
+	}
+
+
+	public static double getFletchScore(String para) {
+		String [] words = getWords(para);
+		System.out.println(words.length);
+		System.out.println(countSentences(para));
+		System.out.println(totalSyllabels(words));
+		return (206.835-(1.015*(words.length/countSentences(para)))-(84.6*(totalSyllabels(words)/words.length)));
+	}
+	
+	private static int countSyllables(String word) {
+		int num = 0;
+		String pattern = "[AEIOUYaeiouy]+";
+		Pattern tokenSplitter = Pattern.compile(pattern);
+		Matcher m = tokenSplitter.matcher(word);
+
+		String lastToken = "";
+		while (m.find()) {
+			num++;
+			lastToken = m.group();
+		}
+		if (lastToken.equals("e") && num > 1 && word.charAt(word.length() - 1) == 'e') {
+			num--;
+		}
+		return num;
+	}
+	private static int totalSyllabels(String [] words) {
+		int nums=0;
+		for(int i =0 ;i<words.length;i++) {
+			nums+= countSyllables(words[i]);
+		}
+		return nums;
+	}
+
+	private static int countSentences(String str) {
+		int num = 0;
+		String pattern = "[^.?!]+";
+		Pattern tokenSplitter = Pattern.compile(pattern);
+		Matcher m = tokenSplitter.matcher(str);
+		while (m.find()) {
+			num++;
+		}
+		return num;
+	}
+	public static double getTypos(String para,DataManager data) {
+		String [] words = getWords(para);
+
+		int num=0;
+		for(int i=0;i<words.length;i++) {
+			if(!data.getEssayHandle().getTable().contains(words[i])) {
+				num++;
+			}
+		}
+		return (nums/(words.length/100));
+	}
+	
+	
+}

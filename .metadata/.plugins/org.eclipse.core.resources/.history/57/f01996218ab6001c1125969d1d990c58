@@ -1,0 +1,14 @@
+package p1;
+
+public class Node {
+	public int iData;
+	public double dData;
+	public Node left_Node;
+	public Node right_Node;
+	
+	
+	public void displayNode() {
+		System.out.println(iData + " " + dData);
+	}
+	
+}

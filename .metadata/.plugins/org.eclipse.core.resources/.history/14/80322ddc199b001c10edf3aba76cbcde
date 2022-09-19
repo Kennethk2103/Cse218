@@ -1,0 +1,44 @@
+package List_eaterators;
+
+public class ListIterator {
+	private Link current;
+	private Link prev;
+	private LinkedList ourList;
+	public ListIterator(LinkedList linkedList) {
+		// TODO Auto-generated constructor stub
+		ourList = linkedList;
+		reset();
+	}
+	public void reset() {
+		current = ourList.getFirst();
+		prev =null;
+	}
+	
+	public boolean atEnd() {
+		return current.next==null;
+	}
+
+	public void nextLink() {
+		prev = current;
+		current = current.next;
+	}
+	public Link getCurrent() {
+		return current;
+	}
+	
+	public void insertBefore(long val) {
+		Link newLink = new Link(val);
+		if(prev==null) {
+			newLink.next=ourList.getFirst();
+			ourList.setFirst(newLink);
+			reset();
+		}
+		else {
+			newLink.next=prev.next;
+			prev.next=newLink;
+			current = newLink;
+		}
+		
+	}
+	public 
+}

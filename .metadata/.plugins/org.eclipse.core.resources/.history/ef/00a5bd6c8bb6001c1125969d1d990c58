@@ -1,0 +1,52 @@
+package p1;
+
+
+public class Tree {
+	private Node root;
+
+	public Tree() {
+		super();
+		root=null;
+	}
+	public void insert(int iData,double dData) {
+		Node temp = new Node();
+		temp.dData=dData;
+		temp.iData=iData;
+		if(root == null) {
+			root=temp;
+		}
+		else {
+			Node current = root;
+			Node parent;
+			while(true) {
+				if(iData>current.iData) {
+					current=current.right_Node;
+				}
+				else if(iData<current.iData) {
+					current=current.left_Node;
+				}
+			}
+		}
+		
+	}
+	public Node find_Link(int key) {
+		Node current=root;
+		
+		while(current.iData!=key) {
+			if(key<current.iData) {
+				current=current.left_Node;
+			}
+			else {
+				current=current.right_Node;
+			}
+			if(current==null) {
+				break;
+				///return null
+			}
+		}
+		return current;
+	
+	}
+	
+
+}
